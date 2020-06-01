@@ -19,8 +19,8 @@ after_success:
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
  # Take those image and pushed it into docker hub
- - docker push -t anjuboura/multi-client ./client 
- - docker push -t anjuboura/multi-server ./server
- - docker push -t anjuborua/multi-worker ./worker
- - docker push -t anjuborua/multi-nginx  ./nginx
+ - docker push anjuboura/multi-client 
+ - docker push anjuboura/multi-server 
+ - docker push anjuborua/multi-worker 
+ - docker push anjuborua/multi-nginx  
 
