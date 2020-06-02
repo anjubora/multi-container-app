@@ -12,14 +12,14 @@ script:
 after_success:
  - docker build -t anjuboura/multi-client ./client 
  - docker build -t anjuboura/multi-server ./server
- - docker build -t anjuborua/multi-worker ./worker
- - docker build -t anjuborua/multi-nginx  ./nginx
+ - docker build -t anjuboura/multi-worker ./worker
+ - docker build -t anjuboura/multi-nginx  ./nginx
    
 
  # Login to docker cli
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
- 
+
  # Take those image and pushed it into docker hub
 
  - docker push anjuboura/multi-client 
