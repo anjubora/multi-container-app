@@ -28,11 +28,13 @@ after_success:
  - docker push anjuboura/multi-nginx
 
 deploy:
+ edge: true
  provider: elasticbeanstalk
  region: ap-south-1
  app: milti-docker
+ env: MiltiDocker-env
  bucket_name: elasticbeanstalk-ap-south-1-341465507757
- bucket_path: docker-multi
+ bucket_path: milti-docker
  on:
   branch: master
  access_key_id: $AWS_ACCESS_KEY
