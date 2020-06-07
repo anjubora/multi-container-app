@@ -25,5 +25,17 @@ after_success:
  - docker push anjuboura/multi-client 
  - docker push anjuboura/multi-server 
  - docker push anjuboura/multi-worker 
- - docker push anjuboura/multi-nginx  
+ - docker push anjuboura/multi-nginx
+
+deploy:
+ provider: elasticbeanstalk
+ region: ap-south-1
+ app: milti-docker
+ bucket_name: elasticbeanstalk-ap-south-1-341465507757
+ bucket_path: docker-multi
+ on:
+  branch: master
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: $AWS_SECRET_KEY
+ 
 
